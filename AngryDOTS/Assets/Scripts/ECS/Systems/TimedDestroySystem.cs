@@ -9,6 +9,13 @@ public class TimedDestroySystem : JobComponentSystem
 {
 	EndSimulationEntityCommandBufferSystem buffer;
 
+	// static World world;
+	// public static World GetWorld(){
+	// 	if(world == null){
+	// 		world = new World("all");
+	// 	}
+	// 	return world;
+	// }
 	protected override void OnCreateManager()
 	{
 		buffer = World.Active.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
@@ -32,7 +39,7 @@ public class TimedDestroySystem : JobComponentSystem
 		var job = new CullingJob
 		{
 			commands = buffer.CreateCommandBuffer().ToConcurrent(),
-			dt = Time.deltaTime
+			dt = Time.DeltaTime
 		};
 
 		var handle = job.Schedule(this, inputDeps);

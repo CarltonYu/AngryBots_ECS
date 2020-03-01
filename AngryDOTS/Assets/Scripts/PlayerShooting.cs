@@ -23,7 +23,6 @@ public class PlayerShooting : MonoBehaviour
 	EntityManager manager;
 	Entity bulletEntityPrefab;
 
-
 	void Start()
 	{
 		if (useECS)

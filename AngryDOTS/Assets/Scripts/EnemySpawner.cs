@@ -19,13 +19,14 @@ public class EnemySpawner : MonoBehaviour
 
 	float cooldown;
 
-
 	void Start()
 	{
 		if (useECS)
 		{
+			
 			manager = World.Active.EntityManager;
-			enemyEntityPrefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(enemyPrefab, World.Active);
+			GameObjectConversionSettings settings = new GameObjectConversionSettings();
+			enemyEntityPrefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(enemyPrefab,World.Active);
 		}
 	}
 
