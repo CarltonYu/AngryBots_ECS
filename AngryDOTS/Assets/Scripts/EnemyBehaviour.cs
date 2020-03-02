@@ -12,10 +12,13 @@ public class EnemyBehaviour : MonoBehaviour, IConvertGameObjectToEntity
 
 	Rigidbody rigidBody;
 
+	// public Animator animator;
 
 	void Start()
 	{
 		rigidBody = GetComponent<Rigidbody>();
+
+		// animator.Play("",);
 	}
 
 	void Update()
